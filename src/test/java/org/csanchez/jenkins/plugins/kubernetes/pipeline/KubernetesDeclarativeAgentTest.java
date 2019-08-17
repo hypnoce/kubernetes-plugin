@@ -150,6 +150,14 @@ public class KubernetesDeclarativeAgentTest extends AbstractKubernetesPipelineTe
         r.assertLogContains("[default:maven] WORKSPACE=/home/jenkins/wsp1/workspace/declarative Custom Working Dir", b);
     }
 
+    @Test
+    public void declarativeCustomWorkingDir() throws Exception {
+        assertNotNull(createJobThenScheduleRun());
+        r.assertBuildStatusSuccess(r.waitForCompletion(b));
+        r.assertLogContains("Apache Maven 3.3.9", b);
+        r.assertLogContains("Workspace dir is", b);
+    }
+
     @Issue("JENKINS-57548")
     @Test
     public void declarativeWithNestedExplicitInheritance() throws Exception {
