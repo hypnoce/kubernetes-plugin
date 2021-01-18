@@ -31,7 +31,7 @@ public class ContainerTemplate extends AbstractDescribableImpl<ContainerTemplate
 
     private static final long serialVersionUID = 4212681620316294146L;
 
-    public static final String DEFAULT_WORKING_DIR = "/home/jenkins/agent";
+    public static final String DEFAULT_WORKING_DIR = "/home/jenkins";
 
     private static final String OLD_DEFAULT_WORKING_DIR = "/home/jenkins";
 
